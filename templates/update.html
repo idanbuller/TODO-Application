@@ -1,0 +1,17 @@
+{% extends './base.html'%}
+
+{% block title %}
+<title> Update task - TODO PY</title>
+{% endblock %}
+
+{% block body%}
+<h1></h1>
+<form action="/do_updatetask" method="post">
+	<div class="form-group">
+		<label></label>
+		<input type="text" class="form-control" value="{{ task.task }}" name="task">
+		<input type="hidden" name="taskID" value="{{ task.idTask }}">
+	</div>
+	<button class="submit">Save new task</button>
+</form>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends './base.html'%}
+
+{% block title %}
+<title> Home page - TODO PY</title>
+{% endblock %}
+
+{% block body %}
+<h1>TO-DO Project<br> By: Idan Buller</h1>
+<hr>
+<form action="/add">
+	<div class="form-group">
+		<label></label>
+		<input type="text" class="form-control" name="name">
+	</div>
+	<button class="submit">Add</button>
+</form>
+
+<br>
+<h2> Tasks </h2>
+<hr>
+<ul>
+	{% for task in list %}
+		<li>
+			{% if task.status == 'complete' %}
+			<span style="text-decoration: line-through">
+			{% else %}
+			</span>
+			<span>
+			{% endif %}
+			{{ task.name }} -
+			</span>
+			{% if task.status == 'complete' %}
+			<a href="/uncompleted/{{ task.id }}">Uncomplete</a> |
+			{% else %}
+			<a href="/completed/{{ task.id }}">Complete</a> |
+			{% endif %}
+			<a href="/delete/{{ task.id }}">Remove</a> |
+			<a href="/update/{{ task.id }}">Update</a>
+		</li>
+	{% endfor %}
+</ul>
+{% endblock %}
