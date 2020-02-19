@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Configs
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Idanid1@localhost/todo-py'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://user:password@localhost/todo-py'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 # Init SQLAlchemy
